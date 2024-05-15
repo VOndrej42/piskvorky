@@ -1,4 +1,10 @@
-from piskvorky.handlers.grid import print_grid
+from piskvorky.handlers.grid import Grid
+from piskvorky.handlers.game import Game
+import pytest
+
+grid = Grid()
 
 
-def test.__init__():
+
+def test_vykresli_pole():
+    pass
