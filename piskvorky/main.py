@@ -1,27 +1,18 @@
-from handlers.grid import create_grid, print_grid
-from handlers.input import get_input
+from handlers.grid import Grid
+from handlers.game import Game
+import os
 
-rows = 3
-colums = 3
-grid = create_grid(rows, colums)
-empty_place = rows*colums
+grid = Grid()
+game = Game()
 
-player_dict = {
-    0: "x",
-    1: "o"
-}
+os.system('cls')
 
-for round_id in range(0, 6):
-    print(f"Round number is {round_id}")
+print("Vítej ve hře piškvorky!")
+print("Začíná hráč se znakem 'X', prosím zadej postupně souřadnice 'x' a 'y'\n")
+print(grid.vykresli_pole())
 
-    for player in range(0, 2):
-        print(f"Player {player} turn")
-        print_grid(grid, rows, colums)
-
-        print("Enter the X cordinate")
-        x = get_input()
-        
-        print("Enter the Y cordinate")
-        y = get_input()
-        
-        grid[x][y] = player_dict[player]
+while True:
+    game.ziskej_souradnice()
+    grid.zapis_pole(game.x, game.y)
+    print(grid.vykresli_pole())
+    game.vyhodnot_hru()
