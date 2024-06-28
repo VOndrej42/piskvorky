@@ -1,1 +1,1 @@
-Terminálová verze populární hry piškvorky
+Konzolová verze populární hry piškvorky
